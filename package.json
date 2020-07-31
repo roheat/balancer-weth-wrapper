@@ -1,0 +1,23 @@
+{
+  "name": "balancer",
+  "version": "1.0.0",
+  "description": "Balancer ETH/WETH Wrapper",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "truffle": "^5.1.37",
+    "truffle-assertions": "^0.9.2",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy-kovan": "truffle migrate --network kovan --reset",
+    "test-kovan": "truffle test ./test/bPoolEthWrapper.test.js --network kovan"
+  },
+  "author": "",
+  "license": "ISC"
+}
