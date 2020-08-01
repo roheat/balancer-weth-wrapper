@@ -9,4 +9,12 @@ interface IBPool {
     function allowance(address src, address dst) external view returns (uint);
     function transfer(address dst, uint amt) external returns (bool);
     function transferFrom(address src, address dst, uint amt) external returns (bool);
+    function getBalance(address token) external view returns (uint); // tokenBalanceIn
+    function getDenormalizedWeight(address token) external view returns (uint); // tokenWeightIn
+    function totalSupply() external view returns (uint); // poolSupply
+    function getTotalDenormalizedWeight() external view returns (uint); // totalWeight
+    function getSwapFee() external view returns (uint); // swapFee
+    function calcPoolOutGivenSingleIn(
+        uint tokenBalanceIn, uint tokenWeightIn, uint poolSupply, uint totalWeight, uint tokenAmountIn, uint swapFee
+    ) external pure returns (uint);
 }
